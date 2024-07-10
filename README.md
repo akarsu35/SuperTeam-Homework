@@ -34,8 +34,7 @@ Bu proje, TypeScript ve Anchor kullanarak bir Solana akıllı sözleşmesiyle na
 6. package.json içersine ekleyin:
     ```bash
     "scripts": {
-    "call_program": "ts-node ./call_program.ts"
-  },
+    "call_program": "ts-node ./call_program.ts"},
     ```
 
 ## Proje Dosyaları
@@ -46,12 +45,16 @@ Bu proje, TypeScript ve Anchor kullanarak bir Solana akıllı sözleşmesiyle na
 
 
 ## yarn call_program
+7. terminalde **yarn call_program** çalıştırın:
 
--**Transaction signature:** 3fZ47WACptkd1zhg7uoLqT4BpRyUozmj8cQaSFm5vMkY6PhJr3UKM72KGkxgm56Mxre1oo9oFxiCzGF4h5ak56e1
-Counter incremented
+    ```bash
+    **örnek bir çıktılar.**
+    Transaction signature:3fZ47WACptkd1zhg7uoLqT4BpRyUozmj8cQaSFm5vMkY6PhJr3UKM72KGkxgm56Mxre1oo9oFxiCzGF4h5ak56e1
+    Counter incremented
 
--**Transaction signature:** wVEiV6TNa8TkXdesN7QhwYvBvLGJx2zr49z7x5vsjZguSyiE9grUjH552AWjCNC53BRPrrGKjtWAJfnfETenopC
-Counter set to 5
+    Transaction signature: wVEiV6TNa8TkXdesN7QhwYvBvLGJx2zr49z7x5vsjZguSyiE9grUjH552AWjCNC53BRPrrGKjtWAJfnfETenopC
+    Counter set to 5
 
--**Transaction signature:**  ndgHvDPAS1Cc7bdZARyWzbxo1gSfwGzZTEmacsPHYwB4rFM332rghRUt8PT7jiteAUYTFBXsUFiK3tBUtNv67pP
-Counter decremented
+    Transaction signature: ndgHvDPAS1Cc7bdZARyWzbxo1gSfwGzZTEmacsPHYwB4rFM332rghRUt8PT7jiteAUYTFBXsUFiK3tBUtNv67pP
+    Counter decremented
+    ```
