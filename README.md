@@ -44,9 +44,14 @@ Bu proje, TypeScript ve Anchor kullanarak bir Solana akıllı sözleşmesiyle na
 - **call_program.ts**: Akıllı sözleşme ile etkileşim kurmak için kullanılan betik dosyasını içerir.
 - **wallet.json**: Cüzdanın gizli anahtarını tamsayı dizisi formatında içerir.
 
-Transaction signature: 3fZ47WACptkd1zhg7uoLqT4BpRyUozmj8cQaSFm5vMkY6PhJr3UKM72KGkxgm56Mxre1oo9oFxiCzGF4h5ak56e1
+
+## yarn call_program
+
+-**Transaction signature:** 3fZ47WACptkd1zhg7uoLqT4BpRyUozmj8cQaSFm5vMkY6PhJr3UKM72KGkxgm56Mxre1oo9oFxiCzGF4h5ak56e1
 Counter incremented
-Transaction signature: wVEiV6TNa8TkXdesN7QhwYvBvLGJx2zr49z7x5vsjZguSyiE9grUjH552AWjCNC53BRPrrGKjtWAJfnfETenopC
+
+-**Transaction signature:** wVEiV6TNa8TkXdesN7QhwYvBvLGJx2zr49z7x5vsjZguSyiE9grUjH552AWjCNC53BRPrrGKjtWAJfnfETenopC
 Counter set to 5
-Transaction signature: ndgHvDPAS1Cc7bdZARyWzbxo1gSfwGzZTEmacsPHYwB4rFM332rghRUt8PT7jiteAUYTFBXsUFiK3tBUtNv67pP
+
+-**Transaction signature:**  ndgHvDPAS1Cc7bdZARyWzbxo1gSfwGzZTEmacsPHYwB4rFM332rghRUt8PT7jiteAUYTFBXsUFiK3tBUtNv67pP
 Counter decremented
