@@ -8,12 +8,27 @@ import {
 } from '@solana/web3.js'
 import { AnchorProvider, Program, Wallet } from '@project-serum/anchor'
 import { IDL, IDL_TYPE } from './counter_idl'
+import dotenv from 'dotenv'
+
+// .env dosyasını yükleyin
+dotenv.config()
 
 // Initialize connection and provider
 const connection = new Connection('https://api.devnet.solana.com', 'confirmed')
-import wallett from './wallet.json'
-const wallet = new Wallet(Keypair.fromSecretKey(new Uint8Array(wallett)))
-//const wallet = Keypair.fromSecretKey(new Uint8Array(wallett));
+
+// .env dosyasından secret key'i okuyun ve Keypair oluşturun
+let walletSecretKey: Uint8Array
+try {
+  walletSecretKey = new Uint8Array(
+    JSON.parse(process.env.WALLET_SECRET_KEY as string)
+  )
+} catch (error) {
+  console.error('Error parsing WALLET_SECRET_KEY:', error)
+  process.exit(1)
+}
+
+const walletKeypair = Keypair.fromSecretKey(walletSecretKey)
+const wallet = new Wallet(walletKeypair)
 const provider = new AnchorProvider(connection, wallet, {})
 
 // Initialize the program
@@ -52,9 +67,9 @@ async function decrementCounter() {
     .accounts({
       counter: counterPubkey,
     })
-    .instruction()
+    .instruction();
 
-  return sendTransaction(instruction)
+  return sendTransaction(instruction);
 }
 
 // Set the counter value
@@ -64,9 +79,9 @@ async function setCounter(value: number) {
     .accounts({
       counter: counterPubkey,
     })
-    .instruction()
+    .instruction();
 
-  return sendTransaction(instruction)
+  return sendTransaction(instruction);
 }
 
 // This code close the counter account
@@ -78,28 +93,29 @@ async function closeCounter() {
       payer: provider.wallet.publicKey,
       counter: counterPubkey,
     })
-    .instruction()
+    .instruction();
 
-  return sendTransaction(instruction)
+  return sendTransaction(instruction);
 }
 
 // Example usage
 async function main() {
   try {
     // Increment the counter
-    await incrementCounter()
-    console.log('Counter incremented')
+    await incrementCounter();
+    console.log("Counter incremented");
 
     // Set the counter to a specific value
-    await setCounter(5)
-    console.log('Counter set to 5')
+    await setCounter(5);
+    console.log("Counter set to 5");
 
     // Decrement the counter
-    await decrementCounter()
-    console.log('Counter decremented')
+    await decrementCounter();
+    console.log("Counter decremented");
   } catch (error) {
-    console.error('Error:', error)
+    console.error("Error:", error);
   }
 }
 
-main()
+main();
+
